@@ -20,6 +20,7 @@ variable "oracle_key_file" {}
 
 variable "openstack_network" {}
 variable "openstack_ceph_network" {}
+variable "openstack_security_group" {}
 
 variable "destination_image_name" {}
 variable "cluster" {}
@@ -117,6 +118,7 @@ source "openstack" "openstack" {
     source_image_name = "Rocky-8.8"
     ssh_username = var.ssh_username
     networks = [var.openstack_network, var.openstack_ceph_network]
+    security_groups = [var.openstack_security_group]
     image_tags = ["compute"]
     metadata = {"cluster": var.cluster}
 }

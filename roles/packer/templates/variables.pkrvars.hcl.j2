@@ -25,3 +25,4 @@ oracle_key_file = "/home/slurm/.oci/oci_api_key.pem"
 
 openstack_network = "{%- if startnode_config.network_id is defined -%}{{ startnode_config.network_id }}{%- endif -%}"
 openstack_ceph_network = "{%- if startnode_config.ceph_network is defined -%}{{ startnode_config.ceph_network }}{%- endif -%}"
+openstack_security_group = "{%- if startnode_config.security_group is defined -%}{{ startnode_config.security_group }}{%- endif -%}"
