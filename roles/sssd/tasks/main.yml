@@ -16,6 +16,11 @@
 - name: Update CA trust anchors
   ansible.builtin.command: update-ca-trust  # noqa no-changed-when
 
+- name: Install authselect
+  ansible.builtin.package:
+    name: authselect
+    state: present
+
 - name: Enable SSSD auth in PAM
   ansible.builtin.command: authselect select sssd --force  # noqa no-changed-when
 
